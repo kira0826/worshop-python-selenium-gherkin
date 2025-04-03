@@ -27,3 +27,10 @@ class InventoryPage:
             print("✅ Popup de contraseña cerrado.")
         except NoSuchElementException:
             print("ℹ️ No se encontró el popup de contraseña.")
+            
+    def is_inventory_page_displayed(self):
+        try:
+            # Verificar que el título "Products" está presente en la página
+            return self.driver.find_element(By.CLASS_NAME, "title").text == "Products"
+        except NoSuchElementException:
+            return False    

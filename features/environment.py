@@ -25,7 +25,7 @@ def before_scenario(context, scenario):
     prefs = {"credentials_enable_service": False,
          "profile.password_manager_enabled": False}
     options.add_experimental_option("prefs", prefs)
-
+    
     service = Service("/usr/bin/chromedriver")  # Ruta específica de ChromeDriver
     context.driver = webdriver.Chrome(service=service, options=options)
     context.driver.implicitly_wait(15)
