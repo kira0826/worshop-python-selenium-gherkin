@@ -11,7 +11,7 @@ class BasePage:
 
     def click(self, locator):
         self.find_element(locator).click()
-
+    
     def type(self, locator, text):
         self.find_element(locator).send_keys(text)
 

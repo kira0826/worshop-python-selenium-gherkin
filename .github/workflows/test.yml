@@ -23,16 +23,18 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          python -m venv venv
+          python -m venv venv   
           source venv/bin/activate
           pip install --upgrade pip
           pip install selenium behave
+          pip install webdriver-manager
 
       - name: Run Behave Tests
         run: |
           source venv/bin/activate
-          behave
-
+          mkdir -p reports
+          behave --format json --out reports/report.json
+      
       - name: Upload Test Reports (if applicable)
         if: failure()
         uses: actions/upload-artifact@v4
