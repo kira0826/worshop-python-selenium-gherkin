@@ -18,7 +18,7 @@ def step_login(context, username, password):
 def step_add_product(context, product_name):
     context.inventory_page = InventoryPage(context.driver)
     context.inventory_page.add_product_to_cart(product_name)
-    context.inventory_page.go_to_cart()
+    #context.inventory_page.go_to_cart()
 
 @when('va al carrito y procede al checkout')
 def step_go_to_checkout(context):
