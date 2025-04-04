@@ -36,7 +36,6 @@ jobs:
           behave --format json --out reports/report.json
       
       - name: Upload Test Reports (if applicable)
-        if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: test-reports
