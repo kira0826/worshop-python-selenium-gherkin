@@ -27,6 +27,7 @@ jobs:
           source venv/bin/activate
           pip install --upgrade pip
           pip install selenium behave
+          pip install webdriver-manager
 
       - name: Run Behave Tests
         run: |

@@ -7,7 +7,6 @@ from selenium import webdriver
 
 @given('el usuario está en la página de login')
 def step_open_login_page(context):
-    context.driver = webdriver.Chrome()
     context.driver.get("https://www.saucedemo.com/")
     context.login_page = LoginPage(context.driver)
 
