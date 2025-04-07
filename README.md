@@ -187,3 +187,39 @@ jobs:
           name: test-reports
           path: reports/
 ```
+---
+
+## Adding a CRON Job
+
+First, use the command `crontab -e` to create a CRON job. In this case, we want it to run every **7th day of the month at 15:48**.
+
+![image](https://github.com/user-attachments/assets/2b0fca88-a9a9-4204-a68b-66468afb078d)
+
+This CRON job is configured to execute a script that runs our automated tests. The script looks like this:
+
+```bash
+#!/bin/bash
+source /home/zai/Documents/semester7/automatizacion/venv/bin/activate
+cd /home/zai/Documents/semester7/automatizacion/worshop-python-selenium-gherkin
+behave >> /home/zai/Documents/semester7/automatizacion/worshop-python-selenium-gherkin/output.txt 2>&1
+deactivate
+```
+
+We can check whether the test ran correctly by inspecting the output log:
+
+### Script Result
+Output of `output.txt` printed with `cat`:
+
+![image](https://github.com/user-attachments/assets/766b4f46-604d-4f8e-9b18-911fd5bcad03)
+
+Additionally, by running the following command, we can verify that CRON executed the job:
+
+```bash
+grep CRON /var/log/syslog
+```
+
+Which provides confirmation like this:
+
+![image](https://github.com/user-attachments/assets/73bd0de7-c736-4d7b-a770-0c43b55de72c)
+
+

@@ -1,0 +1,34 @@
+Here must add logs
+ConfigError: No steps directory in '/home/zai/features'
+Feature: Checkout de compra # features/checkouts.feature:1
+
+  Scenario: Usuario realiza una compra exitosa                     # features/checkouts.feature:3
+    Given el usuario está en la página de login                    # features/steps/checkout_steps.py:8
+    When inicia sesión con "standard_user" y "secret_sauce"        # features/steps/checkout_steps.py:13
+    And agrega el producto "Sauce Labs Backpack" al carrito        # features/steps/checkout_steps.py:17
+    And va al carrito y procede al checkout                        # features/steps/checkout_steps.py:23
+    And ingresa su información de compra "Kevin" "Perez" "12345"   # features/steps/checkout_steps.py:28
+    And confirma la compra                                         # features/steps/checkout_steps.py:33
+    Then el sistema muestra el mensaje "Thank you for your order!" # features/steps/checkout_steps.py:37
+
+Feature: Login Feature # features/login.feature:1
+
+  Scenario: Successful login with valid credentials          # features/login.feature:2
+    Given the user is on the login page                      # features/steps/login_steps.py:7
+    When the user logs in with valid credentials             # features/steps/login_steps.py:12
+    Then the user should be redirected to the inventory page # features/steps/login_steps.py:25
+
+  Scenario: Unsuccessful login with invalid credentials  # features/login.feature:7
+    Given the user is on the login page                  # features/steps/login_steps.py:7
+    When the user logs in with invalid credentials       # features/steps/login_steps.py:17
+    Then an error message should be displayed            # features/steps/login_steps.py:29
+
+  Scenario: Empty login credentials              # features/login.feature:12
+    Given the user is on the login page          # features/steps/login_steps.py:7
+    When the user logs in with empty credentials # features/steps/login_steps.py:21
+    Then an error message should be displayed    # features/steps/login_steps.py:29
+
+2 features passed, 0 failed, 0 skipped
+4 scenarios passed, 0 failed, 0 skipped
+16 steps passed, 0 failed, 0 skipped, 0 undefined
+Took 0m2.733s
