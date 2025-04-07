@@ -18,7 +18,7 @@ def before_scenario(context, scenario):
     options.add_argument("--disable-infobars")
     options.add_argument("--disable-notifications")
     options.add_argument("--password-store=basic")
-    #options.add_argument("--headless")  # Modo sin interfaz gráfica (importante en GitHub Actions)
+    options.add_argument("--headless")  # Modo sin interfaz gráfica (importante en GitHub Actions)
     options.add_argument("--no-sandbox")  # Necesario en contenedores como GitHub Actions
     options.add_argument("--disable-dev-shm-usage")  # Evita problemas en entornos virtualizados
     options.add_argument("--disable-gpu")  # Solo en caso de necesitar compatibilidad con GPU
