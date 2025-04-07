@@ -19,7 +19,7 @@ class InventoryPage:
     def go_to_cart(self):
         
         # Presiona el ícono del carrito para ir al carrito de compras
-        self.driver.find_element(By.CLASS_NAME, "shopping_cart_link").click()
+        self.driver.find_element(By.ID, "shopping_cart_container").click()
 
          
     def is_inventory_page_displayed(self):
